@@ -6,3 +6,4 @@
 - Write some blog posts
 - SEO
 - Social card info (see CodeNinja)
+- Favicon
