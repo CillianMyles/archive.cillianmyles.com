@@ -1,6 +1,6 @@
 ## TODO
 
-- Contact me page
+- Add contact me form
 - First blog post
 - SEO
 - Social card info (see CodeNinja)
@@ -9,7 +9,7 @@
 ## Complete
 
 - Basic layout e.g. header, footer
-- Main pages e.g. index, about, portfolio
+- Main pages e.g. index, about, portfolio, contact
 - Tracking (only on in production environment)
 - Using remote, minified js/css/font files in prod env (speed, parallel requests)
 - Using local, un-minified js/css/font files in dev env (debugging, offline dev)
