@@ -2,10 +2,13 @@
 <html>
   <head>
     <!-- Import Google Icon Font -->
-    <link rel="stylesheet" href="../styles/icons.css">
+    <link rel="stylesheet" href="styles/icons.css">
 
     <!-- Import materialize.css -->
-    <link rel="stylesheet" href="../styles/materialize.css">
+    <link rel="stylesheet" href="styles/materialize.css">
+
+    <!-- Import font-awesome.css -->
+    <link rel="stylesheet" href="styles/font-awesome.css">
 
     <!-- General / Compatibility -->
     <meta charset="utf-8">
@@ -16,7 +19,7 @@
     <title>Cillian Myles</title>
     <meta name="author" content="Cillian Myles">
     <meta name="description" content="A personal page about me, my work, hobbies and interests!"/>
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
     <style type="text/css">
       body {
@@ -28,6 +31,103 @@
       main {
         flex: 1 0 auto;
       }
+
+      .custom-links-section {
+
+      }
+
+      .fa {
+        padding: 20px;
+        font-size: 60px;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+        border-width: 0.5px;
+        border-color: white;
+        border-style: solid;
+      }
+
+      .fa:hover {
+        opacity: 0.7;
+      }
+
+      .fa-linkedin {
+        background: #007BB5;
+        color: white;
+      }
+
+      .fa-github {
+        background: #24292E;
+        color: white;
+      }
+
+      .fa-meetup {
+        background: #F64060;
+        color: white;
+      }
+
+      .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-instagram {
+        background: #FB3958;
+        color: white;
+      }
+
+      .fa-steam {
+        background: #1B2838;
+        color: white;
+      }
+
+      .fa-skype {
+        background: #00AFF0;
+        color: white;
+      }
+
+      .fa-google {
+        background: #DD4B39;
+        color: white;
+      }
+
+      .fa-youtube {
+        background: #BB0000;
+        color: white;
+      }
+
+      .fa-snapchat-ghost {
+        background: #FFFC00;
+        color: white;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      .fa-android {
+        background: #A4C639;
+        color: white;
+      }
+
+      .fa-soundcloud {
+        background: #FF5500;
+        color: white;
+      }
+
+      .fa-reddit {
+        background: #FF5700;
+        color: white;
+      }
+
+      .fa-rss {
+        background: #FF6600;
+        color: white;
+      }
     </style>
   </head>
 
@@ -36,19 +136,19 @@
     <!-- Top Navigation -->
     <nav class="grey darken-2">
       <div class="nav-wrapper container">
-        <a href="../index.html" class="brand-logo">Cillian Myles</a>
+        <a href="index.html" class="brand-logo">Cillian Myles</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="about.html">About</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li class="active"><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="active"><a href="contact.html">Contact</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
           <li><a href="about.html">About</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li class="active"><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="active"><a href="contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -56,53 +156,23 @@
     <!-- Main -->
     <main class="container">
       <br>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">#3 Munster Open 2018</span>
-              <p>
-                The Munster Open was my first weightlifting competition, and it's only the start of my journey. I
-                cannot wait to see what the future has in store for me!
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="blog/2018/04/munster-open.html">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">#2 CodeNinja '17/18</span>
-              <p>
-                The app development competition, aimed at students of NUI Galway and GMIT, was designed to train and
-                encourage students to be creative in the cultivation of their own tech ideas.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="blog/2018/04/codeninja.html">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">#1 Introduction</span>
-              <p>
-                Thanks for coming, and welcome to my blog and first blog post. This first entry will serve as a brief
-                introduction, as well as an outline of what you can expect to see and read on this platform.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="blog/2018/01/introduction.html">Read more</a>
-            </div>
-          </div>
-        </div>
+      <p class="flow-text white-text">
+        Send an 
+        <a href="mailto:myles.cillian@gmail.com" target="_blank">email</a>
+        to: <i>myles(dot)cillian(at)gmail(dot)com</i>
+      </p>
+      <br>
+      <p class="flow-text white-text">Or you can connect with me on any of the following social platforms:</p>
+      <!-- Contact me using font awesome icons -->
+      <div class="custom-links-section">
+        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/cillianmyles" target="_blank"></a>
+        <a class="fa fa-github" href="https://github.com/CillianMyles" target="_blank"></a>
+        <a class="fa fa-meetup" href="https://www.meetup.com/members/195780629" target="_blank"></a>
+        <a class="fa fa-skype" href="skype:cillian.myles?add" target="_blank"></a>
+        <a class="fa fa-twitter" href="https://twitter.com/Mylsey4TheWin" target="_blank"></a>
+        <a class="fa fa-facebook" href="https://www.facebook.com/cillian.myles" target="_blank"></a>
+        <a class="fa fa-instagram" href="https://www.instagram.com/mylsey4thewin" target="_blank"></a>
+        <a class="fa fa-steam" href="http://steamcommunity.com/id/mylsey4thewin" target="_blank"></a>
       </div>
     </main>
 
@@ -137,6 +207,11 @@
                 </a>
               </li>
               <li>
+                <a class="grey-text text-lighten-3" href="skype:cillian.myles?add" target="_blank">
+                  Skype
+                </a>
+              </li>
+              <li>
                 <a class="grey-text text-lighten-3" href="https://twitter.com/Mylsey4TheWin" target="_blank">
                   Twitter
                 </a>
@@ -168,10 +243,10 @@
     </footer>
 
     <!-- Import jQuery before materialize.js -->
-    <script type="text/javascript" src="../scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
 
     <!-- Import materialize.js -->
-    <script type="text/javascript" src="../scripts/materialize.js"></script>
+    <script type="text/javascript" src="scripts/materialize.js"></script>
 
     <!-- Side navigation -->
     <script type="text/javascript">
@@ -179,7 +254,7 @@
     </script>
 
     <!-- Start of StatCounter Code -->
-    <script type="text/javascript" src="../scripts/tracking.js"></script>
+    <script type="text/javascript" src="scripts/tracking.js"></script>
     <noscript>
       <div class="statcounter">
         <a title="Web Analytics Made Easy - StatCounter" href="http://statcounter.com/" target="_blank">
