@@ -72,6 +72,39 @@
         height: auto;
         border: 2px solid white;
       }
+
+      .github-blockquote {
+        background: #f8f8f8;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: .53m 10px;
+      }
+
+      .github-blockquote:before {
+        color: #ccc;
+        font-size: 4em;
+        line-height: .1em;
+        margin-right: .25em;
+        vertical-align: -.43m;
+      }
+
+      .github-blockquote p {
+        display: inline;
+        padding-left: 5px;
+      }
+
+      .card {
+        margin: 1em auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: 5px solid #eee;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .no-margins {
+        margin: 0px !important;
+      }
     </style>
   </head>
 
@@ -106,9 +139,109 @@
       <br><br>
       <img class="responsive-img materialboxed img-header" src="../../../../images/timezones/tesseract.jpg">
       <br><br>
+      <p class="flow-text white-text">
+        In the movie Interstellar (great watch by the way - would totally watch it again even though I’ve
+        seen it at least five times), towards the final scenes (spoiler alert), Coop (Matthew McConaughey)
+        travels through a black hole (caution: as in an otherwise scientifically accurate film, we are
+        undeniably leaving the realms of the known here). In so doing, he gains the ability to travel through
+        the time dimension at will - the same way we “underprivileged” folk can travel through the three
+        physical dimensions any way we desire.
+      </p>
+      <br>
+      <p class="flow-text white-text">
+        We intrinsically understand that there is a fourth dimension. Hold on I will prove it to you.
+      </p>
+      <!-- TODO: fix blockquote bg colour -->
+      <blockquote class="github-blockquote">
+        <p class="flow-text dark-grey-text">"I'll meet you at the Empire State building, New York city."</p>
+      </blockquote>
+      <blockquote class="github-blockquote">
+        <p class="flow-text dark-grey-text">"... when?"</p>
+      </blockquote>
+      <blockquote class="github-blockquote">
+        <p class="flow-text dark-grey-text">"I'll meet you at 6pm, Thursday September 13, 2018."</p>
+      </blockquote>
+      <blockquote class="github-blockquote">
+        <p class="flow-text dark-grey-text">"... where?"</p>
+      </blockquote>
+      <br>
+      <p class="flow-text white-text">
+        Yes of course there are the obvious three physical dimensions, but a time component is crucial if we
+        are to gain anything meaningful from a physical location. A place (in three dimensional space) is
+        meaningless without a time. Likewise a time without a space coordinate is just as useless.
+      </p>
+      <br>
+      <br>
+      <br>
+      <div id="4d-space-light-cone" style="width:100%; margin-bottom:20px; text-align:center">
+        <img alt=""
+             class="img-responsive"
+             style="width:60%"
+             src="../../../../images/timezones/4d-space-light-cone.jpg">
+        <div style="margin-top:0px; padding-bottom:15px;">
+          <small><a target="_blank" href="http://www.astronomytrek.com/7-profound-questions-about-time">Image source</a></small>
+        </div>
+      </div>
+      <br>
+      <p class="flow-text white-text">
+        I’m here today to add another layer of complexity to the scenario which you may never have even considered (unlikely as I presume you at the very least have an interest in software development, since you’re reading this). In today’s world, daylight savings could very well mean “Cloudy Friday”, because our “smart” devices “automagically” handle a lot of the difficult problems we face.
+      </p>
+      <br>
+      <p class="flow-text white-text">
+        Problems like, for example, adding an extra hour of sunlight when the days are supposed to be longer, and taking it back again when that is supposed to happen. We don’t want to know more about these theoretically interesting (but actually very complicated) problems. In the spirit of Newton we want to stand on the shoulders of giants and not “reinvent the wheel”. In reality, we just don’t want to have to deal with the problems because… well… they’re hard!
+      </p>
+      <br>
+      <br>
+      <br>
+      <div id="shouldnt-be-hard" style="width:100%; text-align:center">
+        <img alt=""
+             class="img-responsive"
+             style="width:100%"
+             src="../../../../images/timezones/shouldnt-be-hard.png">
+        <div style="margin-top:0px; padding-bottom:15px;">
+          <small><a target="_blank" href="https://xkcd.com/1349/">xkcd.com</a></small>
+        </div>
+      </div>
+      <br>
+      <br>
+      <p class="flow-text white-text">
+        How about when you have an application, which serves users from all over the world? Where you need to display date-times which are correct for all the different users? Who may work together on the same team, but live in different parts/zones of the world? Well then buckle your seat belts and prepare for liftoff! 🚀🚀🚀
+      </p>
+      <br>
+      <p class="flow-text white-text">
+        The additional layer I’m referring to is of course time zones. A time zone is defined as “a region of the globe which observes a uniform standard time”, but some might describe it as an abstract construct used to torment the souls of software developers and/or shorten their lifespan (granted that one might be a bit of a stretch).
+      </p>
+      <br>
+      <p class="flow-text white-text">
+        Okay… so I may be slightly exaggerating the complexity of time zones, considering the fact that we (as a species) have put people on the moon, and sent probes out of our own solar system which are still sending us back data. Nonetheless, I have had some bad experiences with using time zones in software which has made me somewhat biased. I will share with you my bad experience and how I fixed it, but first… let’s go over some basics!
+      </p>
+      <br>
+      <p class="flow-text white-text">
+        <code>// the basics</code>
+      </p>
+      <div id="world-map-timezones" style="width:100%; text-align:center">
+        <img alt=""
+             class="img-responsive"
+             style="width:100%"
+             src="../../../../images/timezones/world-map-timezones.png">
+        <div style="margin-top:0px; padding-bottom:15px;">
+          <small><a target="_blank" href="https://en.wikipedia.org/wiki/Time_zone#/media/File:Standard_World_Time_Zones.png">Image source</a></small>
+        </div>
+      </div>
+      <br>
+      <p class="flow-text white-text">
+        Coordinated Universal Time (or <code>UTC</code> for short - guess that's what happens when English and
+        French speakers have to work together to find a suitable abbreviation) is the absolute uniform standard
+        time, by which all other times are measured. These other times (or zones) are measured by how much they
+        are offset from <code>UTC</code> (also often referred to <code>GMT</code> - Greenwich Mean Time). For
+        example New York city observes the EST (Eastern Standard Time) time zone which can also be written as
+        <code>GMT-5</code> or <code>UTC-5</code>, which means it's exactly 5 hours behind <code>GMT</code> or
+        <code>UTC</code>.
+      </p>
+      <br>
+      <p class="flow-text white-text">
 
-      <!-- TODO -->
-
+      </p>
       <br>
       <p class="flow-text white-text">
         Thanks for reading,
@@ -119,7 +252,7 @@
       <hr>
       <br>
       <p class="flow-text white-text">
-        This blog was also publish on the
+        This blog was also published on the
         <a target="_blank" href="https://developer.onepagecrm.com/blog/2018/09/27/a-brief-history-of-time-zones">
           OnePageCRM Developer Blog
         </a>
