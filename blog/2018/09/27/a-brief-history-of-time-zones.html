@@ -315,11 +315,121 @@
       <li>-> To show the date-times to the user, we query them from the database</li>
       <li>-> The date-times are again <b><i>converted</i></b>, this time from db entries back to POJOs</li>
       <li>-> The UI needs a <code>String</code> to bind to the UI, not a POJO or <code>Date</code></li>
-      <li>-> Finally the POJOs are again <b><i>converted</i></b> using formatters (fancier version of
-        <code>#toString</code>)
+      <li>
+        -> Finally the POJOs are again <b><i>converted</i></b> using formatters (fancier version of<code>#toString</code>)
       </li>
     </ul>
   </div>
+  <br>
+  <p class="flow-text white-text">
+    Every time a <b><i>conversion</i></b> happens in the above process, we have to make sure that we are using the
+    correct time zone to parse or serialize the date-time. You can imagine this is, even just logistically
+    speaking, quite an involved process. If for any reason we use a different time zone, or more likely let the
+    system apply its own (i.e. <code>JVM</code>'s default) time zone, we are going to make a mess for ourselves, and by
+    extension our customers.
+  </p>
+  <br>
+  <p class="flow-text white-text">
+    <code>// changes to fix the problems</code>
+  </p>
+  <p class="flow-text white-text">
+    Since I know you're dying to hear how we solved this existential crisis, I'll begin to introduce the
+    solution - the Java 8 Time APIs, authored by Stephen Colebourne. To be more specific, a
+    <a target="_blank" href="https://www.threeten.org/threetenbp">backport</a>
+    of the Java 8 Time APIs called <code>ThreeTenBP</code>, which are based on
+    <a target="_blank" href="http://www.joda.org/joda-time">Joda-Time</a>
+    defined by
+    <a target="_blank" href="https://jcp.org/en/jsr/detail?id=310">JSR 310</a>.
+    Even though Android now supports Java 8, it was better to use the backport since the Java 8 support in
+    Android is missing some key classes for the Time APIs, as well as only being available on the newer
+    versions of Android.
+  </p>
+  <br>
+  <p class="flow-text white-text">
+    To get into some of the "nitty gritty" of the changes:
+  </p>
+  <div class="flow-text white-text">
+    <ul>
+      <li>-> Moved from old <code>Date</code> and <code>Calendar</code> APIs to new Java 8 Time APIs</li>
+      <li>
+        -> Changed from <code>java.util.Date</code> to <code>java.time.LocalDate</code> and <code>java.time.Instant</code>
+      </li>
+      <li>-> Removed <b>all</b> <code>Dates</code> and related serializers and/or helpers</li>
+      <li>-> Using
+        <code><a target="_blank" href="https://github.com/JakeWharton/ThreeTenABP">ThreeTenABP</a></code>
+        for Android, and
+        <code><a target="_blank" href="https://www.threeten.org/threetenbp">ThreeTenBP</a></code>
+        for the OnePage
+        <code><a target="_blank" href="https://github.com/OnePageCRM/java-wrapper">Java API Wrapper</a></code>
+        project
+      </li>
+    </ul>
+  </div>
+  <br>
+  <p class="flow-text white-text">
+    <code>// benefits of the switch</code>
+  </p>
+  <p class="flow-text white-text">
+    Does no longer wanting to quit your job count as a benefit of fixing time zone issues? Just kidding...
+    But in all seriousness, the Java 8 Time APIs are so much better to work with it makes me quiver even typing
+    the word "Date", when it's not stuck to the end of another word like "Local".
+  </p>
+  <br>
+  <p class="flow-text white-text">
+    Since making the switch, we have seen numerous benefits:
+  </p>
+  <div class="flow-text white-text">
+    <ul>
+      <li>-> Dates are completely independent of time zones (which they absolutely should be)</li>
+      <li>-> Only things which need to have a time zone do: date-times</li>
+      <li>
+        -> Logical separation of types: dates, times & date-times (which were all previously <code>Date</code> objects)
+      </li>
+      <li>-> Ability to inject mocked clock objects for testing</li>
+      <li>-> Improved maintainability by using better, more modern APIs (immutability, conversions etc.)</li>
+    </ul>
+  </div>
+  <br>
+  <p class="flow-text white-text">
+    Huge thanks to:
+  </p>
+  <div class="flow-text white-text">
+    <ul>
+      <li>
+        -> <a target="_blank" href="https://github.com/jodastephen">Stephen Colebourne</a> for authoring,
+        curating and backporting a truly fantastic set of APIs
+        </li>
+      <li>
+        -> <a target="_blank" href="https://github.com/JakeWharton">Jake Wharton</a> for porting the backport
+        over to Android (providing a sensible and efficient alternative to loading the time zone information
+        from a JAR file)
+      </li>
+      <li>
+        -> <a target="_blank" href="https://stackoverflow.com/users/642706/basil-bourque">Basil Bourque</a>
+        for giving one of those <a target="_blank" href="https://stackoverflow.com/a/22126586/5096103">answers</a>
+        on stackoverflow which deserves bounty, but sadly has not even received the most upvotes
+      </li>
+    </ul>
+  </div>
+  <br>
+  <p class="flow-text white-text">
+    <code>// witty outro</code>
+  </p>
+  <blockquote class="github-blockquote">
+    <p class="flow-text dark-grey-text">"What time is it?" -- Richard Deacon as The King</p>
+  </blockquote>
+  <blockquote class="github-blockquote">
+    <p class="flow-text dark-grey-text">"Any time you want it to be." -- Frank Baxter as the Scientist (from the film "About Time")</p>
+  </blockquote>
+  <br>
+  <p class="flow-text white-text">
+    As engineers, we sometimes complain about limiting factors "outside of our control". Think: legacy code,
+    poor hardware, sub-standard design or process. I'm sure you've heard them all. When the truth of the matter
+    is, we are completely in control of everything we do. Every piece of code we write is an extension of
+    ourselves, acting as a looking glass into a snapshot of our self at that point in time. We are the masters
+    of our fates. We are the captains of our souls. We are the Joseph Coopers travelling through time and space
+    as we desire, but <code>1</code>'s and <code>0</code>'s are our tesseract.
+  </p>
   <br>
   <p class="flow-text white-text">
     Thanks for reading,
