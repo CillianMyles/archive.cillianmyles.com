@@ -1,5 +1,6 @@
 ## TODO
 
+- [JS function](https://stackoverflow.com/a/21984136/5096103) to auto-update age
 - Contact me form
 - SEO
 - Social card info (see CodeNinja)
