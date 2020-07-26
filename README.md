@@ -1,5 +1,6 @@
 ## TODO
 
+- JS function to auto-update year (copyright)
 - [JS function](https://stackoverflow.com/a/21984136/5096103) to auto-update age
 - Contact me form
 - SEO
