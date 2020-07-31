@@ -1,7 +1,6 @@
 
 /* To be run on every page */
 
-console.log("*********"); // TODO: remove
 printCopyrightText();
 printMyAge();
 
@@ -36,8 +35,6 @@ function _myAge() {
 function _age(dateString) {
     var today = new Date();
     var dob = new Date(dateString);
-    console.log("today: " + today); // TODO: remove
-    console.log("dob: " + dob); // TODO: remove
     var age = today.getFullYear() - dob.getFullYear();
     var m = today.getMonth() - dob.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
