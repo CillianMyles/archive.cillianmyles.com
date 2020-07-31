@@ -1,9 +1,26 @@
 
-function printAge() {
-    document.write(age());
+/* To be run on every page */
+
+printCopyrightText();
+
+/* Public / API */
+
+function printCopyrightText() {
+    var text = "Copyright © Cillian Myles " + _currentYear();
+    document.getElementById("copyright-text").innerHTML = text;
 }
 
-function age() {
+function printAge() {
+    document.write(_age());
+}
+
+/* Private / internal */
+
+function _currentYear() {
+    return new Date().getFullYear();
+}
+
+function _age() {
     return _age("1993-05-13");
 }
 
@@ -17,14 +34,3 @@ function _age(dateString) {
     }
     return age;
 }
-
-function printCopyrightText() {
-    var text = "Copyright © Cillian Myles "+ _currentYear();
-    document.getElementById("copyright-text").innerHTML = text;
-}
-
-function _currentYear() {
-    return new Date().getFullYear();
-}
-
-printCopyrightText();
