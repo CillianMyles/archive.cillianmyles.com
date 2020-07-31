@@ -1,22 +1,29 @@
 
 /* To be run on every page */
 
-printCopyrightText();
 console.log("*********"); // TODO: remove
-printAge();
+printCopyrightText();
+printMyAge();
 
 /* Public / API */
 
 function printCopyrightText() {
     var text = "Copyright © Cillian Myles " + _currentYear();
-    document.getElementById("copyright-text").innerHTML = text;
+    _setInnerHtml("copyright-text", text);
 }
 
-function printAge() {
-    document.getElementById("my-age").innerHTML = _myAge();
+function printMyAge() {
+    _setInnerHtml("my-age", _myAge());
 }
 
 /* Private / internal */
+
+function _setInnerHtml(elementId, value) {
+    var element = document.getElementById(elementId);
+    if (typeof element !== 'undefined' && element !== null) {
+        element.innerHTML = value;
+    }
+}
 
 function _currentYear() {
     return new Date().getFullYear();
