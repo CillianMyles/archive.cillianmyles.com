@@ -14,11 +14,11 @@
 - Using remote, minified js/css/font files in prod env (speed, parallel requests)
 - Using local, un-minified js/css/font files in dev env (debugging, offline dev)
 - Favicon
-- Auto update copyright year/text (JS function)
+- Auto update copyright year/text ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L9-L12))
+- Auto update age in index/about pages ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L14-L16))
 
 ## Next
 
-- Auto update age in index/about pages ([JS function](https://stackoverflow.com/a/21984136/5096103))
 - Flesh out portfolio
 - Add CV view/download option
 - Contact me form (with automation?)
