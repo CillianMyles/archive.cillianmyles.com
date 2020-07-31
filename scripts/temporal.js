@@ -19,7 +19,7 @@ function _age(dateString) {
 }
 
 function printCopyrightText() {
-    var text = "This is the new Copyright text for the year " + _currentYear();
+    var text = "Copyright © Cillian Myles "+ _currentYear();
     document.getElementById("copyright-text").innerHTML = text;
 }
 
