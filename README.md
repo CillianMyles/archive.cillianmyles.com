@@ -1,10 +1,10 @@
 
 ## Posts
 
-- [#1 Introduction](https://cillianmyles.github.io/blog/2018/01/28/introduction.html)
-- [#2 CodeNinja '17/18](https://cillianmyles.github.io/blog/2018/04/19/codeninja.html)
-- [#3 Munster Open 2018](https://cillianmyles.github.io/blog/2018/04/26/munster-open.html)
-- [#4 A Brief History of Time (Zones)](https://cillianmyles.github.io/blog/2018/09/27/a-brief-history-of-time-zones.html)
+- [#1 Introduction](https://cillianmyles.github.io/blog/2018/01/28/introduction.html){:target="_blank"}
+- [#2 CodeNinja '17/18](https://cillianmyles.github.io/blog/2018/04/19/codeninja.html){:target="_blank"}
+- [#3 Munster Open 2018](https://cillianmyles.github.io/blog/2018/04/26/munster-open.html){:target="_blank"}
+- [#4 A Brief History of Time (Zones)](https://cillianmyles.github.io/blog/2018/09/27/a-brief-history-of-time-zones.html){:target="_blank"}
 
 ## Complete
 
@@ -14,8 +14,8 @@
 - Using remote, minified js/css/font files in prod env (speed, parallel requests)
 - Using local, un-minified js/css/font files in dev env (debugging, offline dev)
 - Favicon
-- Auto update copyright year/text ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L9-L12))
-- Auto update age in index/about pages ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L14-L16))
+- Auto update copyright year/text ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L9-L12){:target="_blank"}))
+- Auto update age in index/about pages ([JS function](https://github.com/CillianMyles/CillianMyles.github.io/blob/master/scripts/temporal.js#L14-L16){:target="_blank"})
 
 ## Next
 
