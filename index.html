@@ -58,7 +58,7 @@
   <br>
   <img class="circle responsive-img" width="250" src="images/starlord.jpg">
   <p class="flow-text white-text">
-    My name is Cillian and I'm a 25 year old guy from Galway in the West of Ireland.
+    My name is Cillian and I'm a <span id="my-age"> </span> year old guy from Galway in the West of Ireland.
   </p>
   <p class="flow-text white-text">
     I studied Computer and Electronic engineering in National University of Ireland, Galway and am currently
@@ -165,7 +165,10 @@
 <!-- End of StatCounter Code -->
 
 <!-- Date-Time helper code -->
-<script type="text/javascript" src="scripts/temporal.js"></script>
+<script type="text/javascript" src="scripts/temporal.js">
+  printAge();
+  console.log("*********"); // TODO: remove
+</script>
 
 </body>
 </html>
