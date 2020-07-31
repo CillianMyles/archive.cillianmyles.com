@@ -14,10 +14,10 @@
 - Using remote, minified js/css/font files in prod env (speed, parallel requests)
 - Using local, un-minified js/css/font files in dev env (debugging, offline dev)
 - Favicon
+- Auto update copyright year/text (JS function)
 
 ## Next
 
-- Auto update copyright year (JS function)
 - Auto update age in index/about pages ([JS function](https://stackoverflow.com/a/21984136/5096103))
 - Flesh out portfolio
 - Add CV view/download option
