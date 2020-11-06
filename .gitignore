@@ -1,2 +1,5 @@
-# 2017-12-22
+# intellij
 .idea/**
+
+# macOS
+*.DS_Store
